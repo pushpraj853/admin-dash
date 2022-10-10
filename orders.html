@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>order</title>
+  </head>
+  <link rel="stylesheet" href="orders.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"
+  ></script>
+  <script src="orders.js"></script>
+  <body>
+    <!-- <h1>this is home page</h1> -->
+    <nav class="nav-bar">
+      <div class="left-menu">
+        <div class="logo-container">
+          <img class="logo-img" src="logo.png" />
+          <p class="logo-name">Kafene</p>
+        </div>
+        <div class="nav-list">
+          <a class="nav-links" href="orders.html">Order</a>
+          <a class="nav-links" href="products.html">Products</a>
+          <a class="nav-links" href="users.html">User</a>
+        </div>
+      </div>
+      <a class="nav-links" href="index.html">Logout</a>
+    </nav>
+
+    <main class="main-container">
+      <div class="wrapper">
+        <h1 class="page-name">Orders</h1>
+        <div class="wrapper2">
+          <div class="filter">
+            <h3>Filter</h3>
+            <div class="Filter_Options">
+              <p class="count-item">Count: 0</p>
+
+              <div class="filter_option">
+                <input
+                  type="checkbox"
+                  value="New"
+                  class="chekcbox"
+                  id="New"
+                  onchange="clicked()"
+                  checked
+                />
+                <label for="New">New</label>
+              </div>
+              <div class="filter_option">
+                <input
+                  type="checkbox"
+                  value="Packed"
+                  class="chekcbox"
+                  id="Packed"
+                  onchange="clicked()"
+                  checked
+                />
+                <label for="Packed">Packed</label>
+              </div>
+              <div class="filter_option">
+                <input
+                  type="checkbox"
+                  value="InTransit"
+                  class="chekcbox"
+                  id="InTransit"
+                  onchange="clicked()"
+                  checked
+                />
+                <label for="InTransit">InTransit</label>
+              </div>
+              <div class="filter_option">
+                <input
+                  type="checkbox"
+                  value="Delivered"
+                  class="chekcbox"
+                  id="Delivered"
+                  onchange="clicked()"
+                  checked
+                />
+                <label for="Delivered">Delivered</label>
+              </div>
+            </div>
+          </div>
+          <div style="width: 100%" class="content">
+            <table class="order-table">
+              <tr>
+                <th>Id</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Satus</th>
+              </tr>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

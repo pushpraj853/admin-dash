@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="users.css" />
+    <script src="users.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="left-menu">
+        <div class="logo-container">
+          <img class="logo-img" src="logo.png" />
+          <p class="logo-name">Kafene</p>
+        </div>
+        <div class="nav-list">
+          <a class="nav-links" href="orders.html">Order</a>
+          <a class="nav-links" href="products.html">Products</a>
+          <a class="nav-links" href="users.html">User</a>
+        </div>
+      </div>
+      <a class="nav-links" href="index.html">Logout</a>
+    </nav>
+
+    <main class="main-container">
+      <div class="wrapper">
+        <h1 class="page-name">Users</h1>
+        <div class="wrapper2">
+          <form class="search-bar">
+            <input
+              type="text"
+              placeholder="Search by Name"
+              id="my-input"
+              oninput="search()"
+            />
+            <input type="button" value="Reset" class="reset" onclick="getapi()" />
+          </form>
+          <div class="user-list" style="width: 100%">
+            <table class="order-table">
+              <tr>
+                <th>Id</th>
+                <th>User Avatar</th>
+                <th>Full Name</th>
+                <th style="min-width: 100px">DOB</th>
+                <th>Gender</th>
+                <th>Current Location</th>
+              </tr>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

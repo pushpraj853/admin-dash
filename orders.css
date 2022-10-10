@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway:wght@700&family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat", sans-serif;
+}
+
+div {
+  display: block;
+}
+
+li,
+a,
+button {
+  font-family: "montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+}
+
+.nav-bar {
+  display: flex;
+  width: 100%;
+  padding: 0 48px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px #ccc;
+  background-color: #fff;
+  justify-content: space-between;
+}
+
+.left-menu {
+  display: flex;
+}
+
+.logo-img {
+  width: 24px;
+  height: 28px;
+  margin-right: 8px;
+}
+
+.logo-name {
+  font-size: 24px;
+  letter-spacing: -1px;
+  font-weight: 500;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-links {
+  display: block;
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 24px 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  margin: 0 10px;
+}
+
+.main-container {
+  margin-top: 100px;
+}
+
+/* different */
+main {
+  display: block;
+}
+
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 8% 4%;
+}
+
+.wrapper2 {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 24px 0;
+}
+
+.page-name {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.filter {
+  width: 180px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+input {
+  writing-mode: horizontal-tb !important;
+
+  text-rendering: auto;
+  color: fieldtext;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+}
+
+.Filter_Options {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter_option {
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+input[type="checkbox" i] {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 3px 3px 3px 4px;
+  padding: initial;
+  border: initial;
+}
+
+/* .table-col {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table td th {
+  text-align: left;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+}
+
+.order-table td th {
+  text-align: left;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+table > tr {
+  vertical-align: middle;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
+}
+
+/* .something {
+  background-color: #fff;
+  border-top: 6px;
+  margin-left: 10px;
+  border-bottom: 4px solid #f6f7fb;
+} */
+
+.table-col {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+}
+.order-table td {
+  text-align: left;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+table > tr {
+  vertical-align: middle;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
+}
+
+.something td {
+  background-color: #fff;
+  border-bottom: 4px solid #f6f7fb;
+}
