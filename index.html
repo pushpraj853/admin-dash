@@ -5,22 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kafene</title>
+    <link rel="stylesheet" href="index.css" />
     <script
       src="https://code.jquery.com/jquery-3.6.1.min.js"
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="index.js"></script>
   </head>
   <body>
-    <nav class="nav-bar"><img src="logo.png" />Kafene</nav>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="" />
+      </div>
+      <div id="logo-name">Kafene</div>
+      <div class="nav-list">
+        <div class="nav-link"><a href="">orders</a></div>
+        <div class="nav-link"><a href="">products</a></div>
+        <div class="nav-link"><a href="">users</a></div>
+      </div>
+    </nav>
 
-    <div class="login">
-      <h1>Sign In</h1>
-      <input type="text" id="username" placeholder="Enter Username" value="" />
-      <input type="password" id="password" placeholder="Enter Password" value="" />
-      <input type="button" id="login" value="Login" onclick="login()" />
-    </div>
-    <script src="script.js"></script>
+    <main>
+      <div class="container">
+        <h1>Sign In</h1>
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter Username"
+          class="input-field"
+          value=""
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Password"
+          class="input-field"
+          value=""
+        />
+        <input
+          type="button"
+          id="login"
+          class="input-field btn"
+          onclick="login()"
+          value="Login"
+        />
+      </div>
+    </main>
   </body>
 </html>

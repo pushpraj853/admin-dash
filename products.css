@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway:wght@700&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 div {
@@ -14,7 +14,6 @@ div {
 li,
 a,
 button {
-  font-family: "montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
   text-decoration: none;
@@ -71,6 +70,11 @@ button {
   margin: 0 10px;
 }
 
+.active {
+  color: #20b883;
+  border-bottom: 3px solid #20b883;
+}
+
 .main-container {
   margin-top: 100px;
 }
@@ -115,21 +119,6 @@ p {
   margin-inline-end: 0px;
 }
 
-input {
-  writing-mode: horizontal-tb !important;
-
-  text-rendering: auto;
-  color: fieldtext;
-  letter-spacing: normal;
-  word-spacing: normal;
-  line-height: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-}
-
 .Filter_Options {
   display: flex;
   flex-direction: column;
@@ -141,13 +130,7 @@ input {
 }
 
 input[type="checkbox" i] {
-  background-color: initial;
-  cursor: default;
-  appearance: auto;
-  box-sizing: border-box;
   margin: 3px 3px 3px 4px;
-  padding: initial;
-  border: initial;
 }
 
 .table-col {
@@ -163,17 +146,24 @@ table {
   border-spacing: 2px;
   border-color: grey;
 }
-.order-table td {
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.order-table td,
+.order-table th {
   text-align: left;
   padding: 12px 24px;
   font-size: 14px;
 }
+
 table > tr {
   vertical-align: middle;
 }
+
 tr {
   display: table-row;
-  vertical-align: inherit;
   border-color: inherit;
 }
 
@@ -181,10 +171,17 @@ th {
   display: table-cell;
   vertical-align: inherit;
   font-weight: bold;
-  text-align: -internal-center;
+  text-align: internal-center;
 }
 
 .something td {
   background-color: #fff;
   border-bottom: 4px solid #f6f7fb;
+}
+
+.id,
+.medicineBrand,
+.unitPrice,
+.stock {
+  color: #8c8c8c;
 }

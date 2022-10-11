@@ -16,10 +16,12 @@ function show(data) {
     tablerow.classList.add("something");
     for (const key in users) {
       if (key == "profilePic") {
+        let element1 = document.createElement("td");
         let element = document.createElement("img");
         element.src = users[key];
         element.classList.add(key);
-        tablerow.appendChild(element);
+        element1.appendChild(element);
+        tablerow.appendChild(element1);
         continue;
       }
       if (key == "currentCity") {
@@ -41,16 +43,23 @@ function show(data) {
   });
 }
 
-function search() {
-  let searchinput = $("input:text").val();
-  let newDataList = [];
-  fetch(api_url)
-    .then((response) => response.json())
-    .then((userList) => {
-      newDataList = userList.filter((user) => {
-        return user.fullName.includes(searchinput);
-      });
-      $("#table-body").empty();
-      show(newDataList);
-    });
+function search(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault(); //to stop page relaod when hit enter
+    let searchinput = $("input:text").val();
+    if (searchinput.length < 3) {
+      alert("Please Enter more than two characters");
+    } else {
+      let newDataList = [];
+      fetch(api_url)
+        .then((response) => response.json())
+        .then((userList) => {
+          newDataList = userList.filter((user) => {
+            return user.fullName.toLowerCase().includes(searchinput.toLowerCase());
+          });
+          $("#table-body").empty();
+          show(newDataList);
+        });
+    }
+  }
 }

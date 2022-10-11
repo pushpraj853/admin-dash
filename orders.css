@@ -71,6 +71,11 @@ button {
   margin: 0 10px;
 }
 
+.active {
+  color: #20b883;
+  border-bottom: 3px solid #20b883;
+}
+
 .main-container {
   margin-top: 100px;
 }
@@ -115,21 +120,6 @@ p {
   margin-inline-end: 0px;
 }
 
-input {
-  writing-mode: horizontal-tb !important;
-
-  text-rendering: auto;
-  color: fieldtext;
-  letter-spacing: normal;
-  word-spacing: normal;
-  line-height: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-}
-
 .Filter_Options {
   display: flex;
   flex-direction: column;
@@ -141,68 +131,8 @@ input {
 }
 
 input[type="checkbox" i] {
-  background-color: initial;
-  cursor: default;
-  appearance: auto;
-  box-sizing: border-box;
   margin: 3px 3px 3px 4px;
-  padding: initial;
-  border: initial;
 }
-
-/* .table-col {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.order-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.order-table td th {
-  text-align: left;
-  padding: 12px 24px;
-  font-size: 14px;
-}
-
-table {
-  display: table;
-  border-collapse: separate;
-  box-sizing: border-box;
-  text-indent: initial;
-  border-spacing: 2px;
-  border-color: grey;
-}
-
-.order-table td th {
-  text-align: left;
-  padding: 12px 24px;
-  font-size: 14px;
-}
-
-table > tr {
-  vertical-align: middle;
-}
-tr {
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
-}
-
-th {
-  display: table-cell;
-  vertical-align: inherit;
-  font-weight: bold;
-  text-align: -internal-center;
-}
-
-/* .something {
-  background-color: #fff;
-  border-top: 6px;
-  margin-left: 10px;
-  border-bottom: 4px solid #f6f7fb;
-} */
 
 .table-col {
   width: 100%;
@@ -217,17 +147,24 @@ table {
   border-spacing: 2px;
   border-color: grey;
 }
-.order-table td {
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.order-table td,
+.order-table th {
   text-align: left;
   padding: 12px 24px;
   font-size: 14px;
 }
+
 table > tr {
   vertical-align: middle;
 }
+
 tr {
   display: table-row;
-  vertical-align: inherit;
   border-color: inherit;
 }
 
@@ -241,4 +178,10 @@ th {
 .something td {
   background-color: #fff;
   border-bottom: 4px solid #f6f7fb;
+}
+
+.id,
+.time,
+.amount {
+  color: #8c8c8c;
 }

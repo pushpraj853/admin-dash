@@ -1,10 +1,14 @@
 const api_url = "https://5fc1a1c9cb4d020016fe6b07.mockapi.io/api/v1/products";
 
-fetch(api_url)
-  .then((response) => response.json())
-  .then((data) => {
-    show(data);
-  });
+function getapi() {
+  fetch(api_url)
+    .then((response) => response.json())
+    .then((data) => {
+      show(data);
+    });
+}
+
+getapi();
 
 function show(data) {
   let count = document.getElementsByClassName("count-item");
@@ -16,13 +20,45 @@ function show(data) {
     tablerow.classList.add("something");
     for (const key in order) {
       let element = document.createElement("td");
-      if (key == "prescriptionRequired") continue;
-      element.innerText = order[key];
+      if (key == "prescriptionRequired") {
+        continue;
+      }
+      if (key == "unitPrice") {
+        element.innerText = "$" + order[key];
+      } else if (key == "expiryDate") {
+        element.innerText = formatDate(order[key]);
+      } else {
+        element.innerText = order[key];
+      }
       element.classList.add(key);
       tablerow.appendChild(element);
     }
     tableBody.appendChild(tablerow);
   });
+}
+
+function formatDate(givendate) {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  let mydate = new Date(givendate);
+
+  let d = mydate.getDate();
+  let m = mydate.getMonth();
+  let y = mydate.getFullYear();
+  return `${d} ${months[m]}, ${y} `;
 }
 
 function isExpired(givendate) {
@@ -34,9 +70,6 @@ function isExpired(givendate) {
   let date = new Date(y, m, d);
 
   let mydate = new Date(givendate);
-  console.log(date);
-  console.log(mydate);
-
   if (date > mydate) {
     return true;
   } else {
@@ -53,16 +86,17 @@ function clicked() {
       checklist.push(checkbox.value);
     }
   });
-  console.log(checklist);
 
+  if (checklist.length == 0) {
+    console.log("filter cleared");
+    getapi();
+    return;
+  }
   //Collecting list which match with checked filter
   let newDataList = [];
   fetch(api_url)
     .then((response) => response.json())
     .then((orderList) => {
-      // newDataList = orderList.filter((order) => {
-      //    return checklist.includes(order.orderStatus);
-      // });
       checklist.forEach((filterItem) => {
         orderList.forEach((order) => {
           if (filterItem == "Expired" && isExpired(order.expiryDate)) {

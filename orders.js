@@ -15,9 +15,17 @@ function show(data) {
     let tablerow = document.createElement("tr");
 
     for (const key in order) {
-      if (key == "orderTime") continue;
+      //we're skipping time bcos when we get date we use time also
+      if (key == "orderTime") {
+        continue;
+      }
       let element = document.createElement("td");
-      element.innerText = order[key];
+      if (key == "amount") {
+        element.innerText = "$" + order[key];
+      } else {
+        element.innerText = order[key];
+      }
+
       if (key == "orderStatus") {
         tablerow.classList.add(order[key]);
         tablerow.classList.add("something");
@@ -25,6 +33,7 @@ function show(data) {
       if (key == "orderDate") {
         let linebreak = document.createElement("br");
         let time = document.createElement("span");
+        time.classList.add("time");
         time.innerText = order.orderTime;
 
         element.appendChild(linebreak);
@@ -59,4 +68,8 @@ function clicked() {
       $("#table-body").empty();
       show(newDataList);
     });
+}
+
+function logout() {
+  window.localStorage.setItem("isLoggedIn", false);
 }

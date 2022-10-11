@@ -71,6 +71,10 @@ button {
   margin: 0 10px;
 }
 
+.active {
+  color: #20b883;
+  border-bottom: 3px solid #20b883;
+}
 .main-container {
   margin-top: 100px;
 }
@@ -140,17 +144,24 @@ table {
   border-spacing: 2px;
   border-color: grey;
 }
-.order-table td {
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.order-table td,
+.order-table th {
   text-align: left;
   padding: 12px 24px;
   font-size: 14px;
 }
+
 table > tr {
   vertical-align: middle;
 }
+
 tr {
   display: table-row;
-  vertical-align: inherit;
   border-color: inherit;
 }
 
@@ -158,10 +169,17 @@ th {
   display: table-cell;
   vertical-align: inherit;
   font-weight: bold;
-  text-align: -internal-center;
+  text-align: internal-center;
 }
 
 .something td {
   background-color: #fff;
   border-bottom: 4px solid #f6f7fb;
+}
+
+.id,
+.fullName,
+.gender,
+.currentCity {
+  color: #8c8c8c;
 }
