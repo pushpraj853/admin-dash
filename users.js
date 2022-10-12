@@ -46,7 +46,7 @@ function show(data) {
 function search(event) {
   if (event.keyCode === 13) {
     event.preventDefault(); //to stop page relaod when hit enter
-    let searchinput = $("input:text").val();
+    let searchinput = $("#my-input").val();
     if (searchinput.length < 3) {
       alert("Please Enter more than two characters");
     } else {
