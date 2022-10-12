@@ -1,6 +1,7 @@
 const api_url = "https://5fc1a1c9cb4d020016fe6b07.mockapi.io/api/v1/users";
 
 function getapi() {
+  $("#table-body").empty();
   fetch(api_url)
     .then((response) => response.json())
     .then((data) => {
