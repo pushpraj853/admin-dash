@@ -55,7 +55,7 @@ function clicked() {
       checklist.push(checkbox.value);
     }
   });
-  // console.log(checklist);
+  console.log(checklist);
 
   //Collecting list which match with checked filter
   let newDataList = [];
