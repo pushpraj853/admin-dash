@@ -1,7 +1,7 @@
 console.log(window.localStorage.getItem("isLoggedIn"));
 
 if (window.localStorage.getItem("isLoggedIn") == true) {
-  window.location.href = "orders.html";
+  window.location.href = "https://pushpraj853.github.io/admin-dash/orders.html";
 } else {
   function login() {
     if ($("#username").val() == $("#password").val()) {
